@@ -1,0 +1,30 @@
+ yum update -y
+# yum install epel-release
+# yum install dkms -y
+
+ 
+Downlaod Amazon ENS Drivers and create new initrd image
+# yum install kernel-devel git -y
+# git clone https://github.com/amzn/amzn-drivers
+# mv amzn-drivers /usr/src/amzn-drivers-1.0.0
+ 
+Add below entries in /usr/src/amzn-drivers-1.0.0/dkms.conf
+# vim /usr/src/amzn-drivers-1.0.0/dkms.conf
+ 
+PACKAGE_NAME="ena"
+PACKAGE_VERSION="1.0.0"
+CLEAN="make -C kernel/linux/ena clean"
+MAKE="make -C kernel/linux/ena/ BUILD_KERNEL=${kernelver}"
+BUILT_MODULE_NAME[0]="ena"
+BUILT_MODULE_LOCATION="kernel/linux/ena"
+DEST_MODULE_LOCATION[0]="/updates"
+DEST_MODULE_NAME[0]="ena"
+AUTOINSTALL="yes"
+ 
+# dkms add -m amzn-drivers -v 1.0.0
+# dkms build -m amzn-drivers -v 1.0.0
+# dkms install -m amzn-drivers -v 1.0.0
+ 
+# mkinitrd -f -v /boot/initrd-$(uname -r).img $(uname -r)
+
+#Before rebooting mount all volumes using BLKID. 

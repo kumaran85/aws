@@ -1,0 +1,2 @@
+To share RDS snapshots using KMS key between different accounts.
+Using snapshot identifier in CFN to clone existing DB

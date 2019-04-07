@@ -3,3 +3,5 @@
    - name: hostname
      shell: xfs_growfs /dev/nvme0n1p2
 To extend FS on Linux 
+
+#Applied on RHEL server

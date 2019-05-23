@@ -1,0 +1,25 @@
+To delete IAM based certificate in ELB
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "iam:DeleteServerCertificate",
+                "iam:GetServerCertificate",
+                "iam:ListServerCertificates",
+                "iam:UpdateServerCertificate",
+                "iam:UploadServerCertificate"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+# Attach this policy and delete it. 
+
+
+aws iam list-server-certificates
+aws iam delete-server-certificate  --server-certificate-name

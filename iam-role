@@ -1,0 +1,3 @@
+If IAM not showing correct role in Linux, just add no_proxy=169.254.169.254 in /etc/environment
+then source /etc/environment
+aws sts get-caller-identity -> To show which IAM roles attached.

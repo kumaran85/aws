@@ -1,0 +1,40 @@
+docker-storage-setup sets LVM in ECS. created VG,LV.
+30GB disk default 22GB for docker images and metadata, 8GB for OS disk.
+
+Cloud boothook user data executes before user data.
+
+cloud-init-per once mkdir_efs mkdir /efs.
+to send logs to cloudwatch attach IAM role to EC2 instance.
+install awslogs and start awslogs start.
+AMI having container agent ecs-init.
+curl http://localhost:51678/v1/metadata To check ECS agent status.
+sudo start ecs.
+update ecs-init agent 
+ECS env variable can be set on /etc/ecs/ecs.config.
+
+ECS_DATADIR stores persistent data on container instances.
+
+The agent looks for two environment variables when it launches:  ECS_ENGINE_AUTH_TYPE , which specifies
+the type of authentication data that is being sent, and  ECS_ENGINE_AUTH_DATA , which contains the actual
+authentication credentials.
+
+Two available private registry authentication foramt 1. Dockercfg 2.Docker.
+Amazon ECS supports only dockercfg.
+
+To view container metadata curl http://localhost:51678/v1/metadata.
+
+To view running tasks on container curl http://localhost:51678/v1/tasks.
+
+To list one tasks on container: curl http://localhost:51678/v1/tasks?dockerid=79c796ed2a7f.
+
+By default, Unused images deleted and stopped containers including tasks.
+We can set this to desired values.
+
+/etc/ecs/ecs.config and /etc/init/ecs.override /etc/sysconfig/docker files 
+In ecs.config, http_proxy=ip:3128 ,no_proxy=/var/run/docker.sock ->To bypass proxy from IAM roles, AWS traffic.
+
+In ecs.override env http_proxy=
+In sysconfig/docker file export http_proxy=
+
+
+

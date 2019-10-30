@@ -1,0 +1,8 @@
+Creeate NAT gateway in public subnet. And add adn elastic IP to NAT gateway.
+Update route table to redirect internet to private subnet.
+
+you cannnot disassociate elastic IP once created.To use different IP create another NAT gateway.
+
+Once IGW created and attch to VPC.Ensure that your subnet's route table points to the internet gateway.
+
+

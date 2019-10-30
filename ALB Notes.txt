@@ -1,0 +1,40 @@
+ALB works on layer 7.
+Supports SSL certificates based on ACM and from IAM.
+Public subnets are ueds to configure LB.
+
+Option is choose certificate from ACM orr IAM.
+ALB supports rule condition both path and host based routing.
+
+For Scheme, an Internet-facing load balancer routes requests from clients over the Internet to
+targets. An internal load balancer routes requests to targets using private IP addresses.
+
+dualstack means both ipv4 and ipv6
+
+Host based routing is host field of the http header.
+path based is based on URL path of the http header.
+
+Containerized application support multiple port on same instance.
+Sticky sessions mechanism is to route client request to same target group. stickiness defined at targer group level.
+For stcicky session we can set duration.
+accidential delete protection.
+Back-End server encryption.
+
+creating target group option is target type has two values 1.instance(instance ID) 2.ip(route traffic to one or more interfaces).
+
+connetion Idle timeout if no data send ELB closes connection. In apache enable keep alive to enable data transmission. So ELB will data to send untill keep alive timeout.
+
+we can send 128 parallel requests using one HTTP/2.
+
+Two types rule condition 1. host 2. path Each rule can have one host and path condition.
+
+3 types of rule action:
+1. authenticate-congnito
+2.authenticate-oidc (use Identiy proivider to open ID connect.
+3..Forward . Each rule must include forward action 
+
+Default security policy 2016-08 supports TLS 1, 1.1, 1.2.
+
+Clients can use Server Name Identification(SNI) to specify hostname they're trying.
+
+
+

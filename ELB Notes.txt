@@ -1,0 +1,13 @@
+ELB VPC supprts on IPV4 only.
+EC2-Classic ELB both.
+EC2-Classic default Interner facing LB. Which means no VPC.
+Register EC2 instance on ELB. 
+ELb periodicaly checks EC2 health checks.
+If the health check status is fine then shows as InService. or OutOfService.
+ELB checks health based on Listners like Prottocol or Port.
+Else checking ping path where index.html.
+Response timeout to receiving  response  health check in sec default 5. (2 to 60 sec)
+health check interval is between individual instance is 30sec default. (5 to 300).
+ELB supports following protocols: HTTP, HTTPS, TCP, SSL(Secure TCP).
+ELB can use sticky session to bind's user request to specific instance. If app doesn't have sesion cookies then from ELB can create and apply duration for it.
+

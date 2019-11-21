@@ -36,5 +36,5 @@ In ecs.config, http_proxy=ip:3128 ,no_proxy=/var/run/docker.sock ->To bypass pro
 In ecs.override env http_proxy=
 In sysconfig/docker file export http_proxy=
 
-
+ecs agent container will run on each ecs cluster.
 

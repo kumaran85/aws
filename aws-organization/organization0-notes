@@ -1,0 +1,13 @@
+AWSServiceRoleForOrganizations Role created on each member account which allows to control member account using IAM user off master account.
+OrganizationAccountAccessRole has full permission to manage member account. This role gives enough priviliges to 
+Service Control policies (SCP) are attached to each member account.
+You can enable service trust for another AWS service. When do that, it creates service linked-role. 
+
+Policy Types:
+
+SCP (service control policy)
+tag policies
+
+SCP: SCPs offer central control over the maximum available permissions for all accounts in your organization.
+
+

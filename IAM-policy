@@ -14,3 +14,9 @@ Identity based policy attching to users, groups.
 
 AWS:RequestTag Specifies what tag can be passed with key and value. aws
 ec2:RequestTag -> Control access to AWS service resources based on the tags on those resources.
+
+making connection between 3rd part accounts create unique identifier on 3rd party account and AWS ID to corp account.
+
+Create IAM role and attach policy as 
+  "Principal": {"AWS": "3rd party AWS Account ID"},
+    "Condition": {"StringEquals": {"sts:ExternalId": "Unique ID Assigned by 3rd part "}}

@@ -1,0 +1,16 @@
+Resource based policy and identity based policy.
+
+Resource based policy attaching to S3, SQS.
+
+Identity based policy attching to users, groups.
+
+5 Types are allowed elements in JSON.
+
+1. Effect -> Allowed values are Allow or Deny
+2. Action -> Describes types of access EC2Describe, ListBucket
+3. Resource -> * Specifies the object 
+4. Principal -> Specifies user, account, service
+5. Condition 
+
+AWS:RequestTag Specifies what tag can be passed with key and value. aws
+ec2:RequestTag -> Control access to AWS service resources based on the tags on those resources.

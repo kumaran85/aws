@@ -1,4 +1,7 @@
+
+IAM policy logic is Principal, Action, NotAction(New Feature)  Resource, Condition
 Resource based policy and identity based policy.
+
 
 Resource based policy attaching to S3, SQS.
 

@@ -1,4 +1,4 @@
-
+JSON version is 2012-06-01 
 
 IAM policy logic is Principal, Action, NotAction(New Feature)  Resource, Condition
 Resource based policy and identity based policy.
@@ -10,6 +10,10 @@ Identity based policy attching to users, groups, role.
 
 Resource based policy and resource-level policy(Applies using ARN)
 
+For API actions that don't support resource level permissions, you must specify resource statement in the following format.
+
+"Resource": "*"
+
 5 Types are allowed elements in JSON.
 
 1. Effect -> Allowed values are Allow or Deny
@@ -19,10 +23,26 @@ Resource based policy and resource-level policy(Applies using ARN)
 5. Condition 
 
 AWS:RequestTag Specifies what tag can be passed with key and value. aws
-ec2:RequestTag -> Control access to AWS service resources based on the tags on those resources.
+ec2:ResourcetTag -> Control access to AWS service resources based on the tags on those resources.
 
 making connection between 3rd part accounts create unique identifier on 3rd party account and AWS ID to corp account.
 
 Create IAM role and attach policy as 
   "Principal": {"AWS": "3rd party AWS Account ID"},
     "Condition": {"StringEquals": {"sts:ExternalId": "Unique ID Assigned by 3rd part "}}
+
+
+ReqestedRegion: which is the string to restrict permission based on region level
+
+#####
+ELB ARNS format
+
+arn:aws:elasticloadbalancing:region-code:account-id:listener/app/load-balancer-name/load-balancer-id/listener-id
+arn:aws:elasticloadbalancing:region-code:account-id:listener-rule/app/load-balancer-name/load-balancer-id/listener-id/rule-id
+
+Application load balancer ARN format.
+arn:aws:elasticloadbalancing:region-code:account-id:loadbalancer/app/load-balancer-name/load-balancer-id
+
+Network ELB ARN format:
+
+arn:aws:elasticloadbalancing:region-code:account-id:loadbalancer/net/load-balancer-name/load-balancer-id

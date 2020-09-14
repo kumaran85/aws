@@ -1,3 +1,7 @@
 If IAM not showing correct role in Linux, just add no_proxy=169.254.169.254 in /etc/environment
 then source /etc/environment
 aws sts get-caller-identity -> To show which IAM roles attached.
+
+To get temporary credentials:
+
+aws sts assume-role --role-arn arn:aws:iam::123456789012:role/role-name --role-session-name "RoleSession1" --profile IAM-user-name > assume-role-output.txt
